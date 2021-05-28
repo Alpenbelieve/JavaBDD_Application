@@ -1,6 +1,6 @@
 # Compiled class file
-*.class
 /target/
+*.class
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
