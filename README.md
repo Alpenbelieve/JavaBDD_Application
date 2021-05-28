@@ -2,12 +2,12 @@
 
 BDD：Binary Decision Diagram，二元决策图，是一种用于表示布尔函数的数据结构
 
-JavaBDD：用于操作BDD的Java库，[官网](http://javabdd.sourceforge.net/)
+JavaBDD：用于操作 BDD 的 Java 库，[官网](http://javabdd.sourceforge.net/)
 
 #### 本仓库的代码呈现了一部分 JavaBDD 的应用，包括：
 - 电路正确性验证
 - 布尔函数运算
-- CTL模型检验
+- CTL 模型检验
 
 #### 其他说明：
 - 基于 SpringBoot 框架实现，使用 Graphviz 可视化 BDD；
@@ -19,4 +19,4 @@ JavaBDD：用于操作BDD的Java库，[官网](http://javabdd.sourceforge.net/)
 
 #### PS：
 - 更多相关文章：[简书主页](https://www.jianshu.com/u/083f118d6003)
-- Web界面参考：[shapefactory](https://shapefactory.co/)
+- Web 界面参考：[shapefactory](https://shapefactory.co/)
