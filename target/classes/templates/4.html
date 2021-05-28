@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charSet="utf-8" class="next-head"/>
+    <title class="next-head">实例演示</title>
+
+    <script type="text/javascript" href="js/jquery-2.1.3.min.js"></script>
+
+    <meta name="description" content="CTL." class="next-head"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          class="next-head"/>
+    <style id="__jsx-1799873092">
+        div {
+            position: relative;
+        }
+
+        input {
+            width: 24em;
+            color: white;
+            font-size: inherit;
+            font-family: inherit;
+            letter-spacing: 2px;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-bottom-color: hsla(185, 100%, 62%, 0.2);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input::placeholder {
+            color: hsla(0, 0%, 100%, 0.6);
+        }
+
+        span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #3cefff;
+            transform-origin: bottom right;
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        input:focus ~ span {
+            transform-origin: bottom left;
+            transform: scaleX(1);
+        }
+
+        .container.jsx-1799873092 {
+            background-image: url('/images/background.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: 'no-repeat';
+            color: white;
+            width: 100vw;
+            height: 100vh;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            overflow-y: auto;
+            padding: 30px 0;
+        }
+
+        .header.jsx-1799873092 {
+            -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .logo.jsx-1799873092 svg {
+            height: 1.2em;
+            position: relative;
+            top: 0em;
+            margin-right: 0.3em;
+        }
+
+        .footer.jsx-1799873092 {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            width: 100%;
+            padding-bottom: 0px;
+        }
+
+        @media (max-width: 600px) {
+            .footer.jsx-1799873092 {
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+
+        .copyright.jsx-1799873092 {
+            text-align: center;
+            white-space: nowrap;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 0 30px;
+        }
+
+        .copyright.jsx-1799873092 {
+            text-align: right;
+        }
+
+        @media (max-width: 600px) {
+            .copyright.jsx-1799873092 {
+                text-align: center;
+                margin: 30px 0;
+            }
+        }
+
+        a.jsx-1799873092 {
+            color: white;
+            display: block;
+        }
+
+        .circle.jsx-1799873092 .icon.jsx-1799873092 {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            z-index: 2;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+
+        .circle.jsx-1799873092 svg {
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+
+        body {
+            background: #232323;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            height: 100%;
+            width: 100%;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        input,
+        textarea,
+        button {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        * {
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 1.2em;
+        }
+
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 1.2em;
+            margin: 1em 0 0 0;
+            text-align: center;
+        }
+
+        h4 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1.2em;
+            text-align: left;
+        }
+
+        h5 {
+            color: gray;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.2em;
+            text-align: left;
+            letter-spacing: 0.05em;
+        }
+
+        a {
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            line-height: 1.2em;
+            margin: 1em 0 0 0;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+        }
+
+        button {
+            z-index: 1;
+            position: relative;
+            font-size: inherit;
+            font-family: inherit;
+            color: white;
+            padding: 0.5em 1em;
+            outline: none;
+            border: none;
+            background-color: hsl(236, 32%, 26%);
+            overflow: hidden;
+            transition: color 0.4s ease-in-out;
+        }
+
+        button::before {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            background-color: #3cefff;
+            transform-origin: center;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.45s ease-in-out;
+        }
+
+        button:hover {
+            cursor: pointer;
+            color: #161616;
+        }
+
+        button:hover::before {
+            transform: translate(-50%, -50%) scale(15);
+        }
+
+    </style>
+</head>
+
+<body>
+<div>
+    <div id="__next">
+        <div data-reactroot="">
+            <div class="jsx-1799873092 container">
+                <div class="jsx-1799873092 header">
+                    <a href="/index" id="234234">实例演示 : 微波炉加热</a>
+                </div>
+                <div class="jsx-1799873092 header">
+                    <object style="alignment: center;margin: 20px" data="images/oven.svg" width="620"
+                            height="470">
+                    </object>
+                    <p>上图是一个微波炉的操作模型，每个圆圈代表一种状态，圆圈中的每一行</br>
+                        都代表一个布尔变量，有真或假（满足或不被满足）两种取值。比如第一个</br>
+                        圆圈表示的状态中，四种条件都是不满足的，对应的就是微波炉没通电、</br>
+                        箱门开着、未加热和未出错的状态。</p>
+                </div>
+                <div class="jsx-1799873092 header">
+                    <h3 >模型建立</h3>
+                    <p>接下来对上图进行抽象化。将七个状态用 s0-s6 来表示，四个布尔变量分别</br>
+                        用 a、b、c、d 来表示（如果布尔变量为假则在前面加上“﹁”符号表示非）</br>
+                        这样每个状态就可以用布尔变量表示，如 s1 = a∧﹁b∧﹁c∧d 这样的式子，</br>
+                        就得到了下面的 CTL 模型的示意图。</p>
+                    <object style="alignment: center;margin: 10px" data="images/abstract-oven.svg" width="620"
+                            height="470">
+                    </object>
+                </div>
+                <div class="jsx-1799873092 header">
+                    <h3 >用 BDD 和 Graphviz 的表示</h3>
+                    <p>BDD，即二叉决策树，是一种很适合用于表示布尔函数的数据结构。它的一大特点</br>
+                        就是效率高，且内存占用少。用 BDD 表示的布尔函数可以看成是一个有向图，</br>
+                        毕设中使用的 JavaBDD 库可以将 BDD 作为有向图输出，但并不是产生一张图片，</br>
+                        而是用 DOT 语言描述的。Graphviz 可以将其作为输入，产生多种格式的输出。</br>
+                        比如上面提到的 a∧﹁b∧﹁c∧d 的 BDD 输出如下图所示：</p>
+                    <object style="alignment: center;margin: 10px" data="images/4-3.svg" height="350">
+                    </object>
+                    <p>这就算表示出来了 s1 这个状态。同理，如果要表示所有状态，那么设状态集合为 S，</br>
+                        S=s0∨s1∨s2∨s3∨s4∨s5∨s6 也会有一个对应的 BDD，状态间的迁移关系也可以</br>
+                        以类似的形式表示出来，而且在状态很多时 BDD 也不会很大。</br>
+                        基于此，可以设计出一些算法，比如判断某个状态是否满足特定的布尔变量，或者某个状态</br>
+                        的前一个或后一个状态是什么，等等。这就可以用来对微波炉模型进行一些逻辑上的验证。</p>
+                </div>
+                <div class="jsx-1799873092 header">
+                    <h3 >模型检验</h3>
+                    <p>比如，我们要验证，当微波炉的箱门没有关上时，无法进行加热操作。首先我们需要</br>
+                        把这样一个描述转化成 CTL 公式，方便计算机理解。这里需要用到 AU 这个符号。</br>
+                        A[pUq] 的意思是，在从当前状态出发的每一条计算路径上，都存在一个状态使得 q</br>
+                        成立，并且对这些路径上的所有以前状态 p 成立。因此，我们需要验证 A[﹁c U b]</br>
+                        这个公式对于上面抽象出来的 CTL 模型是不是成立的。通过第三个选项进入模型检验</br>
+                        页面，得到的结果是[s0, s1, s2, s3, s4, s5, s6]，说明所有的状态都满足这个</br>
+                        公式，也意味着这个验证是成功的。 : )</p>
+                </div>
+                <div class="jsx-1799873092 footer">
+                    <div class="jsx-1799873092"></div>
+                    <div class="jsx-1799873092"></div>
+                    <span style="cursor:pointer;flex:0 0 30%"
+                          class="jsx-1799873092 copyright">Developed by cde</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1320px" height="850px" viewBox="0 0 1320 850" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 4 Copy 7</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-4-Copy-7" fill="#232323" x="0" y="2.84217094e-13" width="1320" height="850"></rect>
+        <rect id="Rectangle-9-Copy-2" fill="#2D2D2D" transform="translate(880.000000, 637.500000) scale(-1, -1) translate(-880.000000, -637.500000) " x="440" y="425" width="880" height="425"></rect>
+        <rect id="Rectangle-9-Copy" fill="#232323" transform="translate(1100.000000, 212.500000) scale(-1, -1) translate(-1100.000000, -212.500000) " x="880" y="2.84217094e-13" width="440" height="425"></rect>
+        <rect id="Rectangle-9-Copy-3" fill="#232323" transform="translate(660.000000, 212.500000) scale(-1, -1) translate(-660.000000, -212.500000) " x="440" y="2.84217094e-14" width="440" height="425"></rect>
+        <rect id="Rectangle-9-Copy-5" fill="#232323" transform="translate(220.000000, 425.000000) scale(-1, -1) translate(-220.000000, -425.000000) " x="0" y="2.84217094e-13" width="440" height="850"></rect>
+        <path d="M786.262075,850 C786.262075,657.252622 631.293931,501 440.131038,501 C248.968144,501 94,657.252622 94,850 L440.131038,850 L786.262075,850 Z" id="Mask-Copy-9" fill="#232323" transform="translate(440.131038, 675.500000) scale(-1, 1) rotate(-360.000000) translate(-440.131038, -675.500000) "></path>
+        <path d="M1666.26208,850 C1666.26208,657.252622 1511.29393,501 1320.13104,501 C1128.96814,501 974,657.252622 974,850 L1320.13104,850 L1666.26208,850 Z" id="Mask-Copy-10" fill="#232323" transform="translate(1320.131038, 675.500000) scale(-1, 1) rotate(-360.000000) translate(-1320.131038, -675.500000) "></path>
+        <path d="M878.565519,-0.434481207 C687.402625,-0.434481207 532.434481,155.818141 532.434481,348.565519 L878.565519,348.565519" id="Mask-Copy-11" fill="#2D2D2D" transform="translate(705.500000, 174.065519) scale(-1, -1) rotate(-270.000000) translate(-705.500000, -174.065519) "></path>
+        <path d="M346.131038,2.84217094e-13 C154.968144,2.84217094e-13 0,156.252622 0,349 L346.131038,349" id="Mask-Copy-11" fill="#2D2D2D" transform="translate(173.065519, 174.500000) scale(-1, -1) translate(-173.065519, -174.500000) "></path>
+        <path d="M1320.13104,2.84217094e-13 C1128.96814,2.84217094e-13 974,156.252622 974,349 L1320.13104,349" id="Mask-Copy-13" fill="#2D2D2D" transform="translate(1147.065519, 174.500000) scale(1, -1) translate(-1147.065519, -174.500000) "></path>
+        <path d="M440.131038,501 C248.968144,501 94,657.252622 94,850 L440.131038,850" id="Mask-Copy-12" fill="#2D2D2D" transform="translate(267.065519, 675.500000) scale(-1, -1) rotate(-180.000000) translate(-267.065519, -675.500000) "></path>
+    </g>
+</svg>

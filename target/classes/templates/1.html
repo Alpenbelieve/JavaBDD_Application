@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charSet="utf-8" class="next-head"/>
+    <title class="next-head">电路验证</title>
+
+    <script type="text/javascript" href="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" href="js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" href="js/jquery.color.js"></script>
+    <script type="text/javascript" href="js/bootstrap.min.js"></script>
+    <script type="text/javascript" href="js/jquery.graphviz.svg.js"></script>
+    <meta name="description" content="CTL." class="next-head"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          class="next-head"/>
+    <style id="__jsx-1799873092">
+        div {
+            position: relative;
+        }
+
+        input {
+            width: 30em;
+            color: white;
+            font-size: inherit;
+            font-family: inherit;
+            letter-spacing: 2px;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-bottom-color: hsla(185, 100%, 62%, 0.2);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input::placeholder {
+            color: hsla(0, 0%, 100%, 0.6);
+        }
+
+        span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #3cefff;
+            transform-origin: bottom right;
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        input:focus ~ span {
+            transform-origin: bottom left;
+            transform: scaleX(1);
+        }
+
+        .container.jsx-1799873092 {
+            background-image: url('/images/background.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: 'no-repeat';
+            color: white;
+            width: 100vw;
+            height: 100vh;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            overflow-y: auto;
+            padding: 30px 0;
+        }
+
+        .header.jsx-1799873092 {
+            -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .logo.jsx-1799873092 svg {
+            height: 1.2em;
+            position: relative;
+            top: 0em;
+            margin-right: 0.3em;
+        }
+
+        .footer.jsx-1799873092 {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            width: 100%;
+            padding-bottom: 0px;
+        }
+
+        @media (max-width: 600px) {
+            .footer.jsx-1799873092 {
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+
+        .copyright.jsx-1799873092 {
+            text-align: center;
+            white-space: nowrap;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 0 30px;
+        }
+
+        .copyright.jsx-1799873092 {
+            text-align: right;
+        }
+
+        @media (max-width: 600px) {
+            .copyright.jsx-1799873092 {
+                text-align: center;
+                margin: 30px 0;
+            }
+        }
+
+        a.jsx-1799873092 {
+            color: white;
+            display: block;
+        }
+
+        .circle.jsx-1799873092 .icon.jsx-1799873092 {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            z-index: 2;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+
+        .circle.jsx-1799873092 svg {
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+
+        body {
+            background: #232323;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            height: 100%;
+            width: 100%;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        input,
+        textarea,
+        button {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        * {
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 1.2em;
+        }
+
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 1.2em;
+            margin: 1em 0 0 0;
+            text-align: center;
+        }
+
+        h4 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1.2em;
+            text-align: left;
+        }
+
+        h5 {
+            color: gray;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.2em;
+            text-align: left;
+            letter-spacing: 0.05em;
+        }
+
+        a {
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            line-height: 1.2em;
+            margin: 1em 0 0 0;
+            text-align: center;
+        }
+
+
+        p {
+            color: white;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            white-space: pre-line;
+            margin: 1em 0 0 0;
+            text-align: center;
+        }
+
+        button {
+            z-index: 1;
+            position: relative;
+            font-size: inherit;
+            font-family: inherit;
+            color: white;
+            padding: 0.5em 1em;
+            outline: none;
+            border: none;
+            background-color: hsl(236, 32%, 26%);
+            overflow: hidden;
+            transition: color 0.4s ease-in-out;
+        }
+
+        button::before {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            background-color: #3cefff;
+            transform-origin: center;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.45s ease-in-out;
+        }
+
+        button:hover {
+            cursor: pointer;
+            color: #161616;
+        }
+
+        button:hover::before {
+            transform: translate(-50%, -50%) scale(15);
+        }
+
+        table, table tr th, table tr td {
+            border: 1px solid lightgray;
+        }
+
+        table {
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+    </style>
+</head>
+
+<body>
+<div>
+    <div id="__next">
+        <div data-reactroot="">
+            <div class="jsx-1799873092 container">
+                <div class="jsx-1799873092 header">
+                    <a href="/index" id="234234">电路验证</a>
+                </div>
+                <form action="/1/circuit-check" method="post">
+                    <div class="jsx-1799873092 header">
+                        <h4 class="col-md-4" id="234235">电路输入（包含多个变量）</h4>
+                    </div>
+                    <div><input name="inputVariables" type="text" placeholder="Circuit Input">
+                        <span></span></div>
+                    <div class="jsx-1799873092 header">
+                        <h4 class="col-md-4" id="234236">电路输出（多个表达式用分号隔开）</h4>
+                    </div>
+                    <div><input name="outputVariables" type="text" placeholder="Circuit Output">
+                        <span></span></div>
+                    <div class="jsx-1799873092 header">
+                        <h5 class="col-md-4" id="234237">Tips:支持输入的布尔运算符有：</br>
+                            not(非)，and(与)，or(或)，nand(与非)，nor(或非)，</br>biimp(同或)，xor(异或)，imp(蕴含,->)，invimp(反蕴含, <-)，</br>
+                            diff(P diff Q 即为 P∧¬Q)，less(P less Q 即为 ¬P∧Q)</br></br>电路输入：a b c d e   电路输出：result1=a and b or c ;</br>result2=b xor (d or e) ; result3=a or not c imp (d nand e)</h5>
+                    </div>
+                    <div align="center">
+                        <button formaction="/1/circuit-check"  type="submit">生成结果</button>
+                    </div>
+                    <div class="jsx-1799873092 header">
+                        <p th:text="${circuitResult}"></p>
+                    </div>
+                </form>
+                <table cellpadding="8" width="80%" class="table">
+                    <tr th:each="head : ${heads}">
+                        <th th:text="${head[0]}"></th>
+                        <th th:text="${head[1]}"></th>
+                        <th th:text="${head[2]}" th:if="${head.length>2}"></th>
+                        <td th:text="${head[3]}" th:if="${head.length>3}"></td>
+                        <td th:text="${head[4]}" th:if="${head.length>4}"></td>
+                        <td th:text="${head[5]}" th:if="${head.length>5}"></td>
+                        <td th:text="${head[6]}" th:if="${head.length>6}"></td>
+                        <td th:text="${head[7]}" th:if="${head.length>7}"></td>
+                        <td th:text="${head[8]}" th:if="${head.length>8}"></td>
+                        <td th:text="${head[9]}" th:if="${head.length>9}"></td>
+                        <td th:text="${head[10]}" th:if="${head.length>10}"></td>
+                        <td th:text="${head[11]}" th:if="${head.length>11}"></td>
+                        <td th:text="${head[12]}" th:if="${head.length>12}"></td>
+                        <td th:text="${head[13]}" th:if="${head.length>13}"></td>
+                        <td th:text="${head[14]}" th:if="${head.length>14}"></td>
+                    </tr>
+                    <tr th:each="row : ${rows}">
+                        <td th:text="${row[0]}"></td>
+                        <td th:text="${row[1]}" th:if="${row.length>1}"></td>
+                        <td th:text="${row[2]}" th:if="${row.length>2}"></td>
+                        <td th:text="${row[3]}" th:if="${row.length>3}"></td>
+                        <td th:text="${row[4]}" th:if="${row.length>4}"></td>
+                        <td th:text="${row[5]}" th:if="${row.length>5}"></td>
+                        <td th:text="${row[6]}" th:if="${row.length>6}"></td>
+                        <td th:text="${row[7]}" th:if="${row.length>7}"></td>
+                        <td th:text="${row[8]}" th:if="${row.length>8}"></td>
+                        <td th:text="${row[9]}" th:if="${row.length>9}"></td>
+                        <td th:text="${row[10]}" th:if="${row.length>10}"></td>
+                        <td th:text="${row[11]}" th:if="${row.length>11}"></td>
+                        <td th:text="${row[12]}" th:if="${row.length>12}"></td>
+                        <td th:text="${row[13]}" th:if="${row.length>13}"></td>
+                        <td th:text="${row[14]}" th:if="${row.length>14}"></td>
+                    </tr>
+                </table>
+                <!--                    <table cellpadding="10" width="80%" class="table" >-->
+                <!--                        <thead>-->
+                <!--                        <tr>-->
+                <!--                            <th>名称</th>-->
+                <!--                            <th>城市</th>-->
+                <!--                            <th>密码</th>-->
+                <!--                        </tr>-->
+                <!--                        </thead>-->
+                <!--                        <tbody>-->
+                <!--                        <tr>-->
+                <!--                            <td>Tanmay</td>-->
+                <!--                            <td>Bangalore</td>-->
+                <!--                            <td>560001</td>-->
+                <!--                        </tr>-->
+                <!--                        </tbody></table>-->
+                <div class="jsx-1799873092 footer">
+                    <div class="jsx-1799873092"></div>
+                    <div class="jsx-1799873092"></div>
+                    <span style="cursor:pointer;flex:0 0 30%"
+                          class="jsx-1799873092 copyright">Developed by cde</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

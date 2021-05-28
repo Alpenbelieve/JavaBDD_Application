@@ -1,0 +1,52 @@
+
+ <html>
+	<head>
+		<meta charSet="utf-8"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/graphviz.svg.css">
+	</head>
+
+	<style>
+        #instructions {
+            color: #505050;
+			font-size: small;
+            position: absolute;
+            z-index: 100;
+            bottom: 20px;
+            left: 10px;
+        }
+    </style>
+	<body>
+		<h4 id="instructions">高亮节点路径 : 点击节点 ; 取消高亮 : Esc ; 放大/缩小 : Shift+鼠标中键滑动</h4>
+        <div id="graph" style="width: 100%; height: 100%; overflow: scroll;"></div>
+
+		<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+		<script type="text/javascript" src="js/jquery.color.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.graphviz.svg.js"></script>
+		<script type="text/javascript">
+ 			$(document).ready(function(){
+                $("#graph").graphviz({
+                    url: "images/dotsource.svg",
+                    ready: function() {
+                        var gv = this
+                        gv.nodes().click(function () {
+                            var $set = $()
+                            $set.push(this)
+                            $set = $set.add(gv.linkedFrom(this, true))
+                            $set = $set.add(gv.linkedTo(this, true))
+                            gv.highlight($set, true)
+                            gv.bringToFront($set)
+                        })
+                        $(document).keydown(function (evt) {
+                            if (evt.keyCode == 27) {
+                                gv.highlight()
+                            }
+                        })
+                    }
+                });
+            });
+		</script>
+	</body>
+</html>

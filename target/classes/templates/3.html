@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link>
+    <meta charSet="utf-8" class="next-head"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/graphviz.svg.css">
+    <title class="next-head">模型检验</title>
+
+    <script type="text/javascript" src="/js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.color.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.graphviz.svg.js"></script>
+    <meta name="description" content="CTL." class="next-head"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          class="next-head"/>
+    <style id="__jsx-1799873092">
+        div {
+            position: relative;
+        }
+
+        input {
+            width: 24em;
+            color: white;
+            font-size: inherit;
+            font-family: inherit;
+            letter-spacing: 2px;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-bottom-color: hsla(185, 100%, 62%, 0.2);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input::placeholder {
+            color: hsla(0, 0%, 100%, 0.6);
+        }
+
+        span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #3cefff;
+            transform-origin: bottom right;
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        input:focus ~ span {
+            transform-origin: bottom left;
+            transform: scaleX(1);
+        }
+
+        .container.jsx-1799873092 {
+            background-image: url('/images/background.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: 'no-repeat';
+            color: white;
+            width: 100%;
+            height: 100vh;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            overflow-y: auto;
+            padding: 30px 0;
+        }
+
+        .container2.jsx-1799873093 {
+            background-image: url('/images/background.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: 'no-repeat';
+            color: white;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .header.jsx-1799873092 {
+            -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .logo.jsx-1799873092 svg {
+            height: 1.2em;
+            position: relative;
+            top: 0em;
+            margin-right: 0.3em;
+        }
+
+        .footer.jsx-1799873092 {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            width: 100%;
+            padding-bottom: 0px;
+        }
+
+        @media (max-width: 600px) {
+            .footer.jsx-1799873092 {
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+
+        .copyright.jsx-1799873092 {
+            text-align: center;
+            white-space: nowrap;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 0 30px;
+        }
+
+        .copyright.jsx-1799873092 {
+            text-align: right;
+        }
+
+        @media (max-width: 600px) {
+            .copyright.jsx-1799873092 {
+                text-align: center;
+                margin: 30px 0;
+            }
+        }
+
+        a.jsx-1799873092 {
+            color: white;
+            display: block;
+        }
+
+        .circle.jsx-1799873092 .icon.jsx-1799873092 {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            z-index: 2;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+
+        .circle.jsx-1799873092 svg {
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+
+        body {
+            background: #232323;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            height: 100%;
+            width: 100%;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        input,
+        textarea,
+        button {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        * {
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 1.2em;
+        }
+
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 1.2em;
+            margin: 1em 0 0 0;
+            text-align: center;
+        }
+
+        h4 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1.2em;
+            text-align: left;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        h5 {
+            color: gray;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.2em;
+            text-align: left;
+            letter-spacing: 0.05em;
+        }
+
+        a {
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            line-height: 1.2em;
+            margin: 1em 0 0 0;
+            text-align: center;
+        }
+
+        p{
+            color: white;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            white-space: pre-line;
+            margin: 1em 0 0 0;
+            text-align: center;
+        }
+
+        button {
+            z-index: 1;
+            position: relative;
+            font-size: inherit;
+            font-family: inherit;
+            color: white;
+            padding: 0.5em 1em;
+            outline: none;
+            border: none;
+            background-color: hsl(236, 32%, 26%);
+            overflow: hidden;
+            transition: color 0.4s ease-in-out;
+        }
+
+        button::before {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            background-color: #3cefff;
+            transform-origin: center;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.45s ease-in-out;
+        }
+
+        button:hover {
+            cursor: pointer;
+            color: #161616;
+        }
+
+        button:hover::before {
+            transform: translate(-50%, -50%) scale(15);
+        }
+
+        .colmd{
+            position:relative;
+            padding-top:8px;
+            padding-bottom:4px;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <div id="__next">
+        <div data-reactroot="">
+            <div class="jsx-1799873092 container">
+                <div class="jsx-1799873092 header">
+                    <a href="/index" id="234234">输入模型</a>
+                </div>
+                <form action="/3/model-check" method="post">
+                    <div class="jsx-1799873092 header">
+
+                        <h4 class="colmd" id="234235">输入布尔变量</h4>
+                    </div>
+                    <div><input name="booleanVariables" type="text" placeholder="input boolean variables">
+                        <span></span>
+
+                    </div>
+                    <div class="jsx-1799873092 header">
+                        <h4 class="colmd" id="234236">输入状态变量及其标记布尔变量</h4>
+                    </div>
+                    <div>
+                        <input name="stateVariables" type="text" placeholder="input state variables">
+                        <span></span>
+                    </div>
+                    <div class="jsx-1799873092 header">
+                        <h4 class="colmd" id="234237">输入迁移关系</h4>
+                    </div>
+                    <div>
+                        <input name="transRelationship" type="text" placeholder="input transaction relationship">
+                        <span></span>
+                    </div>
+                    <div class="jsx-1799873092 header">
+                        <h4 class="colmd" id="234239">输入要检验的CTL公式</h4>
+                    </div>
+                    <div>
+                        <input name="ctlFormula" type="text" placeholder="input CTL formula">
+                        <span></span>
+                    </div>
+                    <div class="jsx-1799873092 header">
+                        <h5 class="colmd" id="234238">Tips：CTL公式支持的特殊符号有：⊤ ⊥ ﹁ ^ v →</br>例子 布尔变量：p q r</br>状态变量及其标记布尔变量：s0:p q; s1:q r; s2:r</br>
+                            迁移关系：s0,s1 s0,s2 s1,s0 s1,s2 s2,s2</br>CTL公式：r 或 p^q 或 EF(p^q) 或 A[pUr]</h5>
+                    </div>
+                    <div align="center">
+                        <button formaction="/3/model-check" type="submit">生成结果</button>
+                    </div>
+                    <div class="jsx-1799873092 header">
+                        <p th:text="${modelCheckResult}"></p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="jsx-1799873093 container2" align="center">
+    <div class="jsx-1799873092 header">
+        <p th:text="${satStatesResult}"></p>
+    </div>
+    <h5 id="instructions">高亮节点路径 : 点击节点 ; 取消高亮 : Esc ; 放大/缩小 : Shift+鼠标中键滑动</h5>
+    <h5 id="text1">CTL 模型示意图</h5>
+    <div id="graph1" style="width: 65%; height: 600px; overflow: scroll;"></div>
+    <script type="text/javascript" th:inline="javascript">
+        $(document).ready(function(){
+            $("#graph1").graphviz({
+                url: [[${svgPath1}]],
+                ready: function() {
+                    var gv = this
+                    gv.nodes().click(function () {
+                        var $set = $()
+                        $set.push(this)
+                        $set = $set.add(gv.linkedFrom(this, true))
+                        $set = $set.add(gv.linkedTo(this, true))
+                        gv.highlight($set, true)
+                        gv.bringToFront($set)
+                    })
+                    $(document).keydown(function (evt) {
+                        if (evt.keyCode == 27) {
+                            gv.highlight()
+                        }
+                    })
+                }
+            });
+        });
+    </script>
+    <h5 id="text2">CTL 公式语义树</h5>
+    <div id="graph2" style="width: 65%; height: 600px; overflow: scroll;"></div>
+    <script type="text/javascript" th:inline="javascript">
+        $(document).ready(function(){
+            $("#graph2").graphviz({
+                url: [[${svgPath2}]],
+                ready: function() {
+                    var gv = this
+                    gv.nodes().click(function () {
+                        var $set = $()
+                        $set.push(this)
+                        $set = $set.add(gv.linkedFrom(this, true))
+                        $set = $set.add(gv.linkedTo(this, true))
+                        gv.highlight($set, true)
+                        gv.bringToFront($set)
+                    })
+                    $(document).keydown(function (evt) {
+                        if (evt.keyCode == 27) {
+                            gv.highlight()
+                        }
+                    })
+                }
+            });
+        });
+    </script>
+</div>
+</body>
+
+</html>

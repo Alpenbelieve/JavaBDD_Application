@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charSet="utf-8" class="next-head" />
+  <title class="next-head">模型检验</title>
+
+  <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+
+  <meta name="description" content="CTL." class="next-head" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    class="next-head" />
+  <meta property="og:url" content="" class="next-head" />
+  <meta property="og:title" content="ShapeFactory | Simple tools to enrich creativity" class="next-head" />
+  <meta property="og:description" content="CTL." class="next-head" />
+  <style id="__jsx-1799873092">
+    .container.jsx-1799873092 {
+      background-image: url('images/background.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: 'no-repeat';
+      color: white;
+      width: 100vw;
+      height: 100vh;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 30px 0;
+    }
+
+    .header.jsx-1799873092 {
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+
+    .tagline.jsx-1799873092 {
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      margin-top: 10px;
+    }
+
+    .logo.jsx-1799873092 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 50;
+      font-size: 55px;
+      line-height: 1.2em;
+      margin: 0;
+      letter-spacing: 0.05em;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+    }
+
+    .logo.jsx-1799873092 svg {
+      height: 1.2em;
+      position: relative;
+      top: 0em;
+      margin-right: 0.3em;
+    }
+
+    @media (max-width:700px) {
+      .logo.jsx-1799873092 {
+        font-size: 7vw;
+      }
+    }
+
+    @media (max-width:400px) {
+      .logo.jsx-1799873092 {
+        font-size: 10vw;
+      }
+    }
+
+    .description.jsx-1799873092 {
+      height: 30px;
+      margin-top: 40px;
+      width: 100%;
+      max-width: 600px;
+      margin: 40px auto 0 auto;
+    }
+
+    @media (max-width:700px) {
+      .description.jsx-1799873092 {
+        display: none;
+      }
+    }
+
+    .footer.jsx-1799873092 {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      width: 100%;
+      padding-bottom: 0px;
+    }
+
+    @media (max-width:600px) {
+      .footer.jsx-1799873092 {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+      }
+    }
+
+    .copyright.jsx-1799873092,
+    .curious.jsx-1799873092,
+    .terms.jsx-1799873092 {
+      text-align: center;
+      white-space: nowrap;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 0 30px;
+    }
+
+    .terms.jsx-1799873092 {
+      text-align: right;
+    }
+
+    @media (max-width:600px) {
+      .terms.jsx-1799873092 {
+        text-align: center;
+        margin: 30px 0;
+      }
+    }
+
+    .copyright.jsx-1799873092 {
+      text-align: right;
+    }
+
+    @media (max-width:600px) {
+      .copyright.jsx-1799873092 {
+        text-align: center;
+        margin: 30px 0;
+      }
+    }
+
+    .splash.jsx-1799873092 {
+      padding: 40px 0;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    a.jsx-1799873092 {
+      color: white;
+      display: block;
+    }
+
+    .circles.jsx-1799873092 {
+      display: grid;
+      margin-top: 25px;
+      grid-column-gap: 30px;
+      grid-row-gap: 30px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      margin-bottom: 40px;
+      width: 950px;
+      max-width: 80%;
+      margin: 0 auto;
+      height: 100%;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    @media (max-width:1050px) {
+      .circles.jsx-1799873092 {
+        width: auto;
+        grid-template-columns: minmax(100px, 200px) minmax(100px, 200px);
+        grid-template-rows: 1fr 1fr;
+      }
+    }
+
+    @media (max-width:700px) {
+      .circles.jsx-1799873092 {
+        grid-template-columns: minmax(100px, 200px) minmax(100px, 200px);
+      }
+    }
+
+    .padding.jsx-1799873092 {
+      padding-top: 100%;
+      width: 100%;
+    }
+
+    .circle.jsx-1799873092 {
+      border-radius: 100%;
+      display: block;
+      font-weight: 500;
+      font-size: 20px;
+      cursor: pointer;
+      -webkit-transition: 200ms ease-out;
+      transition: 200ms ease-out;
+      position: relative;
+    }
+
+    .circle.jsx-1799873092:hover {
+      border-color: rgba(255, 255, 255, 0) !important;
+    }
+
+    .circle.jsx-1799873092 .icon.jsx-1799873092 {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      z-index: 2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .circle.jsx-1799873092 .icon-background.jsx-1799873092 {
+      border-radius: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: 'no-repeat';
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      -webkit-transition: 200ms ease-out;
+      transition: 200ms ease-out;
+      -webkit-transition: 200ms ease-out;
+      transition: 200ms ease-out;
+      opacity: 0;
+    }
+
+    .circle.jsx-1799873092:hover .icon-background.jsx-1799873092 {
+      opacity: 1;
+    }
+
+    .circle.jsx-1799873092 .logo-app.jsx-1799873092 {
+      background-image: url('images/logo.jpg');
+    }
+
+    .circle.jsx-1799873092 .pigment-app.jsx-1799873092 {
+      background-image: url('images/pigment.jpg');
+    }
+
+    .circle.jsx-1799873092 .gradient-app.jsx-1799873092 {
+      background-image: url('images/gradient.png');
+    }
+
+    .circle.jsx-1799873092 .duotone-app.jsx-1799873092 {
+      background-image: url('images/duotone.jpg');
+    }
+
+    .circle.jsx-1799873092 svg {
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width:500px) {
+      .circle.jsx-1799873092 {
+        font-size: 4vw;
+      }
+
+      .circle.jsx-1799873092 svg {
+        margin-bottom: 5px;
+        height: 10vw !important;
+      }
+    }
+
+    @media (max-width:300px) {
+      .circle.jsx-1799873092 {
+        font-size: 4vw;
+      }
+
+      .circle.jsx-1799873092 svg {
+        margin-bottom: 1vw;
+      }
+    }
+
+    body {
+      background: #232323;
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      height: 100%;
+      width: 100%;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    input,
+    textarea,
+    button {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    * {
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    h2 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 1.2em;
+    }
+
+    h3 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.2em;
+      margin: 1em 0 0 0;
+      text-align: center;
+    }
+
+    a {
+      color: blue;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div id="__next">
+      <div data-reactroot="">
+        <div class="jsx-1799873092 container">
+          <div class="jsx-1799873092 header">
+            <h1 class="jsx-1799873092 logo" ><svg viewBox="0 0 60 77">
+                <defs>
+                  <polygon points="0 0 59.5 0 59.5 76.2004175 0 76.2004175"></polygon>
+                </defs>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <mask fill="white">
+                    <use xlink:href="#path-1"></use>
+                  </mask>
+                  <g></g>
+                  <path
+                    d="M21.8033562,34.735931 L37.0840748,8.24342727 L52.3667643,34.735931 L21.8033562,34.735931 Z M50.683185,55.8699703 C50.683185,64.8081084 43.4178962,72.0790984 34.4883433,72.0790984 C26.3455907,72.0790984 19.6061493,66.0275012 18.4783759,58.1833058 L36.4695349,58.1833058 L36.4695349,39.7957606 C44.4652551,40.7788492 50.683185,47.6048457 50.683185,55.8699703 Z M4.11848181,54.0611977 L4.11848181,25.0340452 L22.6437662,25.0340452 L14.6701205,38.8572502 L32.3502647,38.8572502 L32.3502647,54.0611977 L4.11848181,54.0611977 Z M37.0840748,0 L25.0207231,20.912726 L0,20.912726 L0,58.1833058 L14.3149566,58.1833058 C15.4695349,68.3080934 24.0699403,76.2004175 34.4867665,76.2004175 C45.6876337,76.2004175 54.8016669,67.0808105 54.8016669,55.8699703 C54.8016669,48.755596 51.1238878,42.4905754 45.5776551,38.8572502 L59.5,38.8572502 L37.0840748,0 Z"
+                    fill="white" mask="url(#mask-2)"></path>
+                </g>
+              </svg>模型检验</h1>
+            <h3 id="234234" class="jsxtagline">基于 Graphviz 的 CTL 符号检验</h3>
+          </div>
+          <div class="jsx-1799873092 splash">
+            <div class="jsx-1799873092 circles">
+<!--              <a id="logo-app" href="../templates/1.html" class="jsx-1799873092 circle">-->
+              <a id="logo-app" href="/1" class="jsx-1799873092 circle">
+                <div class="jsx-1799873092 padding"></div>
+                <div class="jsx-1799873092 icon-background logo-app"></div>
+                <div class="jsx-1799873092 icon">
+                  <svg viewBox="0 0 30 30">
+                    <defs>
+                      <linearGradient id="linearGradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop stop-color="white" offset="60%"></stop>
+                        <stop stop-color="white" offset="60%"></stop>
+                      </linearGradient>
+                    </defs>
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g transform="translate(-1.000000, -1.000000)" fill="url(#linearGradient-1)">
+                        <g transform="translate(1.000000, 1.000000)">
+                          <path
+                            d="M6.1029688,27.0790884 C5.50590472,26.6383156 4.93424763,26.1473063 4.39338687,25.6068303 C-1.46446229,19.7487866 -1.46446229,10.2511915 4.39338687,4.39353277 C10.251236,-1.46451092 19.7488279,-1.46451092 25.606677,4.39353277 C26.1473453,4.93420123 26.638162,5.50585852 27.0789346,6.10292281 L6.1029688,27.0790884 Z M10.2983929,29.2477291 C9.53368128,28.9959689 8.78513769,28.6810762 8.06103871,28.303051 L28.3030892,8.0609934 C28.6811143,8.78509264 28.9958144,9.53382896 29.2475745,10.2983484 L10.2983929,29.2477291 Z M19.9172453,29.1749727 C21.9952285,28.4554929 23.9471391,27.2663688 25.606677,25.6068303 C27.2662149,23.9472919 28.4555311,21.9953805 29.1748182,19.9172042 L19.9172453,29.1749727 Z M15.9393204,29.9706735 C14.9184216,30.0343834 13.8921335,29.9943482 12.8779715,29.8499903 L29.850028,12.8779279 C29.9941933,13.8920903 30.0344211,14.9181863 29.9707111,15.9392778 L15.9393204,29.9706735 Z">
+                          </path>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                  电路验证</div>
+              </a><a id="pigment-app" href="/2" class="jsx-1799873092 circle">
+                <div class="jsx-1799873092 padding"></div>
+                <div class="jsx-1799873092 icon-background pigment-app"></div>
+                <div class="jsx-1799873092 icon">
+                  <svg viewBox="0 0 34 33">
+                    <defs>
+                      <path id="path-1"
+                        d="M15.2569039,0 C6.83074857,0 0,6.88736632 0,15.3833632 C0,23.8793601 6.83074857,30.7667265 15.2569039,30.7667265">
+                      </path>
+                      <path id="path-3"
+                        d="M30.2569039,0 C21.8307486,0 15,6.88736632 15,15.3833632 C15,23.8793601 21.8307486,30.7667265 30.2569039,30.7667265">
+                      </path>
+                    </defs>
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g
+                        transform="translate(16.920310, 15.920310) rotate(-135.000000) translate(-16.920310, -15.920310) translate(1.420310, 0.420310)">
+                        <mask fill="white">
+                          <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use stroke="white" stroke-width="1.75" fill="none" xlink:href="#path-1"></use>
+                        <mask fill="white">
+                          <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use stroke="white" stroke-width="1.75" fill="white"
+                          transform="translate(22.628452, 15.383363) scale(-1, 1) translate(-22.628452, -15.383363) "
+                          xlink:href="#path-3"></use>
+                      </g>
+                    </g>
+                  </svg>
+                  布尔运算</div>
+              </a><a id="gradient-app" href="/3" class="jsx-1799873092 circle">
+                <div class="jsx-1799873092 padding"></div>
+                <div class="jsx-1799873092 icon-background gradient-app"></div>
+                <div class="jsx-1799873092 icon">
+                  <svg viewBox="0 0 41 46" style="height:56px;position:relative;top:2px">
+                    <g stroke="none" stroke-width="0.5" fill="none" fill-rule="evenodd">
+                      <g transform="translate(1.000000, 1.000000)" fill="white" fill-rule="nonzero" stroke="white">
+                        <path
+                          d="M37.8270879,10.36156 L19.5031457,0 L1.17246267,10.36156 L0,11.0242 L0,12.33804 L0,33.044 L18.3360758,43.34308 L19.5031457,44 L20.6697663,43.34308 L39,33.044 L39,12.33804 L39,11.0242 L37.8270879,10.36156 Z M19.5031457,2.63912 L35.4938468,11.68112 L19.5031457,20.71124 L3.50615321,11.68112 L19.5031457,2.63912 Z M18.3360758,40.70924 L2.33369054,31.71916 L2.33369054,13.6576 L18.3360758,22.69388 L18.3360758,40.70924 Z M36.6663095,31.71916 L20.6697663,40.70924 L20.6697663,22.69388 L36.6663095,13.6576 L36.6663095,31.71916 Z">
+                        </path>
+                      </g>
+                    </g>
+                  </svg>
+                  输入模型</div>
+              </a><a id="duotone-app" href="/4" class="jsx-1799873092 circle">
+                <div class="jsx-1799873092 padding"></div>
+                <div class="jsx-1799873092 icon-background duotone-app"></div>
+                <div class="jsx-1799873092 icon">
+                  <svg viewBox="0 0 24 32">
+                    <defs></defs>
+                    <g stroke="none" stroke-width="1" fill="white" fill-rule="evenodd">
+                      <g transform="translate(-25.000000, -798.000000)" stroke="white" stroke-width="2">
+                        <path vector-effect="non-scaling-stroke"
+                          d="M47.7648537,817.808321 C47.723327,815.925732 47.098805,813.929829 45.9481414,812.23929 C44.5816709,810.230961 43.4689542,808.615273 40.9950274,805.037662 L40.9353102,804.951303 C39.0129514,802.171326 38.1252286,800.884278 37.0468151,799.309018 C37.0316133,799.286832 37.0169054,799.265621 37.0026787,799.245361 C36.0863955,800.560705 35.3260516,801.629838 33.6491129,803.971804 L33.6211908,804.010799 C30.5589079,808.2875 29.2047962,810.222814 27.6078316,812.670621 C25.1695117,816.408299 25.5473657,821.403075 28.4582845,824.961757 C31.3777173,828.533097 36.0485512,829.886762 40.3418972,828.411776 C44.8034803,826.878265 47.7098992,822.77973 47.7648537,817.808321 Z">
+                        </path>
+                      </g>
+                    </g>
+                  </svg>
+                  实例演示</div>
+              </a></div>
+            <script type="text/javascript">
+            $("#logo-app").hover(function () {
+                $("h3.jsxdescription").text("使用 JavaBDD 进行电路的验证，得到输出为真的情况");
+              }, function () {
+                $("h3.jsxdescription").text("");
+              });
+              $("#pigment-app").hover(function () {
+                $("h3.jsxdescription").text("基于逆波兰表达式的布尔函数解析，支持11种逻辑符号");
+              }, function () {
+                $("h3.jsxdescription").text("");
+              });
+              $("#gradient-app").hover(function () {
+                $("h3.jsxdescription").text("接收 Kripke 或手动输入，结合 JavaBDD、Graphviz 实现对模型的符号检验和可视化，支持复杂 CTL 公式的解析");
+              }, function () {
+                $("h3.jsxdescription").text("");
+              });
+              $("#duotone-app").hover(function () {
+                $("h3.jsxdescription").text("通过电梯运行、微波炉加热的例子展示模型检验的应用");
+              }, function () {
+                $("h3.jsxdescription").text("");
+              });
+            </script>
+            <h3 class="jsxdescription"></h3>
+          </div>
+          <div class="jsx-1799873092 footer">
+            <div class="jsx-1799873092"></div>
+            <div class="jsx-1799873092"></div><span style="cursor:pointer;flex:0 0 30%"
+              class="jsx-1799873092 copyright">Developed by cde</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="__next-error"></div>
+  </div>
+  <div>
+
+</body>
+
+</html>
